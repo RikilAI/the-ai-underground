@@ -177,54 +177,46 @@
 
     .hero-tagline {
       margin-top: 40px;
-      padding-top: 32px;
+      padding-top: 24px;
       border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
       gap: 0;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
 
     .hero-stat {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      padding: 0 28px;
-      text-align: center;
-    }
-
-    .hero-stat:first-child {
-      padding-right: 0;
+      gap: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .hero-stat-num {
-      font-size: clamp(26px, 4vw, 36px);
-      font-weight: 900;
-      color: var(--gold);
+      font-size: clamp(14px, 2vw, 16px);
+      font-weight: 700;
+      color: var(--white);
       line-height: 1;
-      letter-spacing: -0.02em;
     }
 
     .hero-stat-unit {
-      font-size: 0.6em;
+      font-size: 1em;
       font-weight: 700;
-      opacity: 0.8;
     }
 
     .hero-stat-label {
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--text-muted);
-      letter-spacing: 0.08em;
-      margin-top: 4px;
-      text-transform: uppercase;
+      font-size: clamp(13px, 1.8vw, 15px);
+      font-weight: 400;
+      color: var(--white);
     }
 
     .hero-stat-sep {
-      width: 1px;
-      height: 36px;
-      background: var(--border);
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
       flex-shrink: 0;
+      margin: 0 8px;
     }
 
     /* ─── SECTION HEADERS ─── */
@@ -720,10 +712,9 @@
 
       .hero h1 .brand-square { width: 0.9em; height: 0.9em; }
 
-      .hero-tagline { gap: 0; }
-      .hero-stat { padding: 0 16px; }
-      .hero-stat:first-child { padding-right: 0; }
-      .hero-stat-sep { height: 28px; }
+      .hero-tagline { flex-wrap: nowrap; }
+      .hero-stat-sep { margin: 0 4px; width: 14px; }
+      .hero-stat-num, .hero-stat-label { font-size: 13px; }
 
       .hero-body p { font-size: 16px; line-height: 1.6; margin-bottom: 8px; }
       .section-title { font-size: 20px; }
@@ -744,8 +735,7 @@
     }
 
     @media (max-width: 375px) {
-      .hero-tagline { flex-wrap: wrap; gap: 16px; }
-      .hero-stat { padding: 0 12px; }
+      .hero-tagline { flex-wrap: wrap; gap: 8px; }
       .hero-stat-sep { display: none; }
       .hero h1 { font-size: clamp(36px, 11vw, 52px); }
       .hero-bg-text { font-size: clamp(100px, 30vw, 180px); }
