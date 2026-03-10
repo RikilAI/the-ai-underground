@@ -665,15 +665,19 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 600px) {
       section {
-        padding: 60px 0;
+        padding: 48px 0;
       }
 
       .container {
-        padding: 0 20px;
+        padding: 0 16px;
+      }
+
+      .hero {
+        padding: 32px 0 24px;
       }
 
       .session-card {
-        padding: 24px 20px;
+        padding: 20px 16px;
       }
 
       .session-buttons {
@@ -684,24 +688,33 @@
         justify-content: center;
       }
 
-      .hero h1 .brand-square { width: 1em; height: 1em; }
+      .hero h1 .brand-square { width: 0.9em; height: 0.9em; }
 
-      .hero-tagline { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-      .hero-pill { justify-content: center; }
+      .hero-tagline { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .hero-pill { justify-content: center; font-size: 13px; padding: 8px 10px; }
 
       .hero-body p { font-size: 16px; line-height: 1.6; margin-bottom: 8px; }
       .section-title { font-size: 20px; }
       .section-body { font-size: 15px; }
       .about-body p { font-size: 16px; }
 
+      .nav-link { font-size: 18px; }
+      .nav-overlay { padding: 32px 20px; }
+
       .cta-section {
-        padding: 70px 0;
+        padding: 48px 0;
       }
 
       .footer-inner {
         flex-direction: column;
         text-align: center;
       }
+    }
+
+    @media (max-width: 375px) {
+      .hero-tagline { grid-template-columns: 1fr; }
+      .hero h1 { font-size: clamp(36px, 11vw, 52px); }
+      .hero-bg-text { font-size: clamp(100px, 30vw, 180px); }
     }
     /* NAV */
     .nav-bar {
@@ -888,10 +901,22 @@
       <div class="about-name">ריקי לויסמן</div>
       <div class="about-body">
         <p>מנהלת חדשנות וראש תחום <span dir="ltr">AI</span> במרכז היזמות <span dir="ltr">FUTURE</span> של <span dir="ltr">HIT</span>, מכון טכנולוגי חולון.</p>
-        <p>במסגרת תפקידי אני מעבירה הרצאות וסדנאות לסטודנטים, מרצים וחוקרים, ומובילה תהליכי הטמעת <span dir="ltr">AI</span> בארגונים.</p>
+        <p>מרצה, מעבירה סדנאות ותכניות הדרכה.</p>
         <p>בנוסף, אני עובדת עם יזמים, מנהלים ועובדים שרוצים ליישם <span dir="ltr">AI</span> בעבודה האמיתית שלהם.</p>
         <p>ה-<span dir="ltr">Underground</span> הוא הפורמט האינטימי ביותר שיצרתי. כי לפעמים מה שצריך זה פשוט לשבת ביחד, לפתוח את הלפטופ, ולעשות את זה.</p>
       </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════ WHATSAPP CTA ═══════════════ -->
+  <section class="cta-section fade-in" id="whatsapp">
+    <div class="container">
+      <span class="section-tag">להישאר מעודכנים</span>
+      <h2 class="section-title">הקבוצה שקטה.<br>המידע חשוב.</h2>
+      <p class="section-body">קבוצת הוואטסאפ של ה-Underground: רק תאריכים חדשים ולינקים לרישום. בלי רעשים.</p>
+      <a href="https://chat.whatsapp.com/JvGTCJgakmiBIy60hzHNGn?mode=hq1tcla" target="_blank" class="btn btn-ghost btn-large">להצטרפות לקבוצה</a>
     </div>
   </section>
 
@@ -986,18 +1011,6 @@
         </div>
 
       </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ═══════════════ WHATSAPP CTA ═══════════════ -->
-  <section class="cta-section fade-in" id="whatsapp">
-    <div class="container">
-      <span class="section-tag">להישאר מעודכנים</span>
-      <h2 class="section-title">הקבוצה שקטה.<br>המידע חשוב.</h2>
-      <p class="section-body">קבוצת הוואטסאפ של ה-Underground: רק תאריכים חדשים ולינקים לרישום. בלי רעשים.</p>
-      <a href="https://chat.whatsapp.com/JvGTCJgakmiBIy60hzHNGn?mode=hq1tcla" target="_blank" class="btn btn-ghost btn-large">להצטרפות לקבוצה</a>
     </div>
   </section>
 
