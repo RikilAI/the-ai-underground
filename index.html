@@ -181,7 +181,8 @@
       border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
-      gap: 16px;
+      justify-content: flex-start;
+      gap: 24px;
       flex-wrap: nowrap;
     }
 
@@ -189,17 +190,20 @@
       font-size: clamp(14px, 2vw, 16px);
       font-weight: 700;
       color: var(--white);
-      line-height: 1.35;
+      line-height: 1.4;
       text-align: center;
       white-space: nowrap;
     }
 
     .hero-stat-sep {
       color: var(--gold);
-      font-weight: 700;
-      font-size: 18px;
+      font-weight: 300;
+      font-size: 28px;
       flex-shrink: 0;
       line-height: 1;
+      align-self: stretch;
+      display: flex;
+      align-items: center;
     }
 
     /* ─── SECTION HEADERS ─── */
@@ -695,8 +699,9 @@
 
       .hero h1 .brand-square { width: 0.9em; height: 0.9em; }
 
-      .hero-tagline { gap: 10px; }
+      .hero-tagline { gap: 14px; }
       .hero-stat { font-size: 13px; }
+      .hero-stat-sep { font-size: 22px; }
 
       .hero-body p { font-size: 16px; line-height: 1.6; margin-bottom: 8px; }
       .section-title { font-size: 20px; }
@@ -828,7 +833,7 @@
           <div class="hero-stat-sep">|</div>
           <div class="hero-stat">קבוצה<br>קטנה</div>
           <div class="hero-stat-sep">|</div>
-          <div class="hero-stat">נושא<br>אחד</div>
+          <div class="hero-stat">מקצועי<br>וממוקד</div>
           <div class="hero-stat-sep">|</div>
           <div class="hero-stat">260₪<br>למפגש</div>
         </div>
