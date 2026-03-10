@@ -181,42 +181,25 @@
       border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
-      gap: 0;
+      gap: 16px;
       flex-wrap: nowrap;
     }
 
     .hero-stat {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .hero-stat-num {
       font-size: clamp(14px, 2vw, 16px);
       font-weight: 700;
       color: var(--white);
-      line-height: 1;
-    }
-
-    .hero-stat-unit {
-      font-size: 1em;
-      font-weight: 700;
-    }
-
-    .hero-stat-label {
-      font-size: clamp(13px, 1.8vw, 15px);
-      font-weight: 400;
-      color: var(--white);
+      line-height: 1.35;
+      text-align: center;
+      white-space: nowrap;
     }
 
     .hero-stat-sep {
-      width: 20px;
-      height: 1px;
-      background: var(--gold);
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 18px;
       flex-shrink: 0;
-      margin: 0 8px;
+      line-height: 1;
     }
 
     /* ─── SECTION HEADERS ─── */
@@ -712,9 +695,8 @@
 
       .hero h1 .brand-square { width: 0.9em; height: 0.9em; }
 
-      .hero-tagline { flex-wrap: nowrap; }
-      .hero-stat-sep { margin: 0 4px; width: 14px; }
-      .hero-stat-num, .hero-stat-label { font-size: 13px; }
+      .hero-tagline { gap: 10px; }
+      .hero-stat { font-size: 13px; }
 
       .hero-body p { font-size: 16px; line-height: 1.6; margin-bottom: 8px; }
       .section-title { font-size: 20px; }
@@ -735,8 +717,8 @@
     }
 
     @media (max-width: 375px) {
-      .hero-tagline { flex-wrap: wrap; gap: 8px; }
-      .hero-stat-sep { display: none; }
+      .hero-tagline { gap: 8px; }
+      .hero-stat { font-size: 12px; }
       .hero h1 { font-size: clamp(36px, 11vw, 52px); }
       .hero-bg-text { font-size: clamp(100px, 30vw, 180px); }
     }
@@ -842,25 +824,13 @@
         <p>ה-<strong><span dir="ltr">Underground</span></strong> הוא התשובה: מפגשים מקצועיים וממוקדים, כל אחד סביב נושא אחד, וידע שהופך למעשי כבר מחר במשרד.</p>
 
         <div class="hero-tagline">
-          <div class="hero-stat">
-            <div class="hero-stat-num">90</div>
-            <div class="hero-stat-label">דקות</div>
-          </div>
-          <div class="hero-stat-sep"></div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">קטנה</div>
-            <div class="hero-stat-label">קבוצה</div>
-          </div>
-          <div class="hero-stat-sep"></div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">1</div>
-            <div class="hero-stat-label">נושא למפגש</div>
-          </div>
-          <div class="hero-stat-sep"></div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">260<span class="hero-stat-unit">₪</span></div>
-            <div class="hero-stat-label">למפגש</div>
-          </div>
+          <div class="hero-stat">90<br>דקות</div>
+          <div class="hero-stat-sep">|</div>
+          <div class="hero-stat">קבוצה<br>קטנה</div>
+          <div class="hero-stat-sep">|</div>
+          <div class="hero-stat">נושא<br>אחד</div>
+          <div class="hero-stat-sep">|</div>
+          <div class="hero-stat">260₪<br>למפגש</div>
         </div>
       </div>
     </div>
