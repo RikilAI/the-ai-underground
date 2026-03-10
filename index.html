@@ -181,25 +181,48 @@
       border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 0;
       flex-wrap: wrap;
     }
 
     .hero-stat {
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--text-muted);
-      white-space: nowrap;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 28px;
+      text-align: center;
     }
 
-    .hero-stat-val {
-      font-weight: 700;
+    .hero-stat:first-child {
+      padding-right: 0;
+    }
+
+    .hero-stat-num {
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 900;
       color: var(--gold);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-stat-unit {
+      font-size: 0.6em;
+      font-weight: 700;
+      opacity: 0.8;
+    }
+
+    .hero-stat-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+      text-transform: uppercase;
     }
 
     .hero-stat-sep {
       width: 1px;
-      height: 14px;
+      height: 36px;
       background: var(--border);
       flex-shrink: 0;
     }
@@ -697,8 +720,10 @@
 
       .hero h1 .brand-square { width: 0.9em; height: 0.9em; }
 
-      .hero-tagline { gap: 12px; }
-      .hero-stat-sep { display: none; }
+      .hero-tagline { gap: 0; }
+      .hero-stat { padding: 0 16px; }
+      .hero-stat:first-child { padding-right: 0; }
+      .hero-stat-sep { height: 28px; }
 
       .hero-body p { font-size: 16px; line-height: 1.6; margin-bottom: 8px; }
       .section-title { font-size: 20px; }
@@ -719,7 +744,9 @@
     }
 
     @media (max-width: 375px) {
-      .hero-tagline { flex-direction: column; gap: 6px; }
+      .hero-tagline { flex-wrap: wrap; gap: 16px; }
+      .hero-stat { padding: 0 12px; }
+      .hero-stat-sep { display: none; }
       .hero h1 { font-size: clamp(36px, 11vw, 52px); }
       .hero-bg-text { font-size: clamp(100px, 30vw, 180px); }
     }
@@ -825,13 +852,25 @@
         <p>ה-<strong><span dir="ltr">Underground</span></strong> הוא התשובה: מפגשים מקצועיים וממוקדים, כל אחד סביב נושא אחד, וידע שהופך למעשי כבר מחר במשרד.</p>
 
         <div class="hero-tagline">
-          <span class="hero-stat"><span class="hero-stat-val">90</span> דקות</span>
-          <span class="hero-stat-sep"></span>
-          <span class="hero-stat">קבוצה קטנה</span>
-          <span class="hero-stat-sep"></span>
-          <span class="hero-stat">מפגש פר נושא</span>
-          <span class="hero-stat-sep"></span>
-          <span class="hero-stat"><span class="hero-stat-val">260 ש"ח</span> למפגש</span>
+          <div class="hero-stat">
+            <div class="hero-stat-num">90</div>
+            <div class="hero-stat-label">דקות</div>
+          </div>
+          <div class="hero-stat-sep"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">קטנה</div>
+            <div class="hero-stat-label">קבוצה</div>
+          </div>
+          <div class="hero-stat-sep"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">1</div>
+            <div class="hero-stat-label">נושא למפגש</div>
+          </div>
+          <div class="hero-stat-sep"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">260<span class="hero-stat-unit">₪</span></div>
+            <div class="hero-stat-label">למפגש</div>
+          </div>
         </div>
       </div>
     </div>
