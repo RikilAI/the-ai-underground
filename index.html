@@ -14,11 +14,11 @@
       --bg-card-hover: #161616;
       --border: #222222;
       --border-accent: #c8963e;
-      --gold: #c8963e;
-      --gold-light: #e8b46a;
-      --gold-dim: rgba(200, 150, 62, 0.15);
+      --gold: #d4a853;
+      --gold-light: #e8c070;
+      --gold-dim: rgba(212, 168, 83, 0.18);
       --text: #e8e4dc;
-      --text-muted: #888880;
+      --text-muted: #9e9e96;
       --text-dim: #555550;
       --white: #f5f0e8;
     }
@@ -180,21 +180,28 @@
       padding-top: 32px;
       border-top: 1px solid var(--border);
       display: flex;
-      gap: 10px;
+      align-items: center;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 9px 16px;
-      border: 1px solid var(--gold);
+    .hero-stat {
       font-size: 14px;
-      font-weight: 600;
-      color: var(--gold);
+      font-weight: 400;
+      color: var(--text-muted);
       white-space: nowrap;
-      background: var(--gold-dim);
+    }
+
+    .hero-stat-val {
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .hero-stat-sep {
+      width: 1px;
+      height: 14px;
+      background: var(--border);
+      flex-shrink: 0;
     }
 
     /* ─── SECTION HEADERS ─── */
@@ -690,8 +697,8 @@
 
       .hero h1 .brand-square { width: 0.9em; height: 0.9em; }
 
-      .hero-tagline { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-      .hero-pill { justify-content: center; font-size: 13px; padding: 8px 10px; }
+      .hero-tagline { gap: 12px; }
+      .hero-stat-sep { display: none; }
 
       .hero-body p { font-size: 16px; line-height: 1.6; margin-bottom: 8px; }
       .section-title { font-size: 20px; }
@@ -712,7 +719,7 @@
     }
 
     @media (max-width: 375px) {
-      .hero-tagline { grid-template-columns: 1fr; }
+      .hero-tagline { flex-direction: column; gap: 6px; }
       .hero h1 { font-size: clamp(36px, 11vw, 52px); }
       .hero-bg-text { font-size: clamp(100px, 30vw, 180px); }
     }
@@ -814,14 +821,17 @@
 
       <div class="hero-body">
         <p>כולנו שומעים על זה, קוראים על זה, ולא מספיקים ליישם.</p>
-        <p>אבל עולם העבודה לא מחכה. מי שלא משתמש ב-<span dir="ltr">AI</span> ישאר מאחור.</p>
+        <p>עולם העבודה לא מחכה. מי שלא משתמש ב-<span dir="ltr">AI</span> ישאר מאחור.</p>
         <p>ה-<strong><span dir="ltr">Underground</span></strong> הוא התשובה: מפגשים מקצועיים וממוקדים, כל אחד סביב נושא אחד, וידע שהופך למעשי כבר מחר במשרד.</p>
 
         <div class="hero-tagline">
-          <span class="hero-pill">90 דקות</span>
-          <span class="hero-pill">קבוצה קטנה</span>
-          <span class="hero-pill">מפגש פר נושא</span>
-          <span class="hero-pill">260 ש"ח למפגש</span>
+          <span class="hero-stat"><span class="hero-stat-val">90</span> דקות</span>
+          <span class="hero-stat-sep"></span>
+          <span class="hero-stat">קבוצה קטנה</span>
+          <span class="hero-stat-sep"></span>
+          <span class="hero-stat">מפגש פר נושא</span>
+          <span class="hero-stat-sep"></span>
+          <span class="hero-stat"><span class="hero-stat-val">260 ש"ח</span> למפגש</span>
         </div>
       </div>
     </div>
@@ -930,11 +940,21 @@
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
+            איפה זה מתקיים?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">המפגשים מתקיימים בביתי ברעננה, בחלל מרווח שהותאם ללמידה. כתובת מדויקת תישלח עם אישור ההרשמה.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
             למי זה מתאים?
             <span class="faq-icon"></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">ה-Underground מיועד לכל מי שעובד עם מחשב ורוצה ליישם AI בעבודה השוטפת. אין צורך בניסיון קודם.</div>
+            <div class="faq-answer-inner">לכל מי שעובד עם מחשב ורוצה ליישם AI בעבודה השוטפת. אין צורך בניסיון קודם ואין צורך לדעת לתכנת. אין כאן שורת קוד. הכל עובד בשפה טבעית.</div>
           </div>
         </div>
 
@@ -950,6 +970,16 @@
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
+            מה מדיניות הביטולים?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">התשלום מבטיח את המקום שלך. לא ניתן להחזיר תשלום, אבל ניתן להעביר לסדנה הבאה באותו נושא עד 48 שעות לפני.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
             האם יהיו עוד מועדים?
             <span class="faq-icon"></span>
           </button>
@@ -960,31 +990,11 @@
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            צריך לדעת לתכנת?
-            <span class="faq-icon"></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">לא. אין כאן שורת קוד. הכל עובד בשפה טבעית.</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            זה מתאים למתכנתים?
-            <span class="faq-icon"></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">ה-Underground מיועד לכל מי שעובד עם מחשב, לא למפתחים. אם אתם מחפשים הכשרה טכנית, זה לא המקום הנכון עבורכם.</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
             אפשר להזמין סדנה סגורה לקבוצה?
             <span class="faq-icon"></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">כן. אם יש קבוצה עם מכנה משותף, תפקיד, ארגון, צורך ספציפי, אני בונה סדנה ממוקדת עבורכם. צרו קשר דרך קבוצת הוואטסאפ.</div>
+            <div class="faq-answer-inner">כן. אם יש קבוצה עם מכנה משותף, תפקיד, ארגון או צורך ספציפי, אני בונה סדנה ממוקדת עבורכם. צרו קשר דרך קבוצת הוואטסאפ.</div>
           </div>
         </div>
 
@@ -995,16 +1005,6 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">קבוצות קטנות, כדי שיהיה זמן לכל אחד לעבוד, לשאול ולקבל מענה.</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            מה קורה אם לא יכולתי להגיע?
-            <span class="faq-icon"></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">התשלום מבטיח את המקום שלך. לא ניתן להחזיר תשלום, אבל ניתן להעביר לסדנה הבאה באותו נושא עד 48 שעות לפני. מועדים חדשים מתפרסמים קודם כל בקבוצת הוואטסאפ, כדאי להיות שם.</div>
           </div>
         </div>
 
